@@ -12,8 +12,11 @@ export default function Settings() {
       </div>
 
       {/* Settings Categories */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('User Management feature coming soon!')}
+        >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
               <Users className="w-6 h-6 text-primary" />
@@ -23,9 +26,12 @@ export default function Settings() {
               <p className="text-sm text-muted-foreground">Create, edit, and manage user accounts</p>
             </div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Role Management feature coming soon!')}
+        >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
               <Shield className="w-6 h-6 text-success" />
@@ -35,21 +41,12 @@ export default function Settings() {
               <p className="text-sm text-muted-foreground">Configure user roles and permissions</p>
             </div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
-              <Database className="w-6 h-6 text-warning" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground">System Configuration</h3>
-              <p className="text-sm text-muted-foreground">Warehouse locations and preferences</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Alert Settings feature coming soon!')}
+        >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-accent/30 rounded-lg flex items-center justify-center">
               <Bell className="w-6 h-6 text-accent-foreground" />
@@ -59,7 +56,7 @@ export default function Settings() {
               <p className="text-sm text-muted-foreground">Configure stock alerts and notifications</p>
             </div>
           </div>
-        </div>
+        </button>
       </div>
 
       {/* Coming Soon Placeholder */}

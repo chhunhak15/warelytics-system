@@ -39,7 +39,10 @@ export default function StockTransferPage() {
             Manage stock transfers to different locations and departments
           </p>
         </div>
-        <Button className="gap-2">
+        <Button 
+          className="gap-2"
+          onClick={() => alert('New Transfer feature coming soon!')}
+        >
           <Plus className="w-4 h-4" />
           New Transfer
         </Button>
@@ -116,6 +119,7 @@ export default function StockTransferPage() {
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Status</th>
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Transferred By</th>
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Notes</th>
+                <th className="text-right py-3 px-6 font-medium text-muted-foreground">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -152,6 +156,24 @@ export default function StockTransferPage() {
                   </td>
                   <td className="py-4 px-6 text-muted-foreground max-w-xs truncate">
                     {transfer.notes || 'No notes'}
+                  </td>
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-2 justify-end">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => alert(`Viewing transfer #${transfer.id}`)}
+                      >
+                        View
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => alert(`Editing transfer #${transfer.id}`)}
+                      >
+                        Edit
+                      </Button>
+                    </div>
                   </td>
                 </tr>
               ))}

@@ -9,8 +9,8 @@ interface RecentActivityProps {
 export const RecentActivity = ({ receipts, transfers }: RecentActivityProps) => {
   // Combine and sort recent activities
   const activities = [
-    ...receipts.slice(0, 3).map(receipt => ({
-      id: receipt.id,
+    ...receipts.slice(0, 3).map((receipt, index) => ({
+      id: `receipt-${receipt.id}`,
       type: 'receipt' as const,
       description: `Received ${receipt.quantity} ${receipt.productName}`,
       subtext: `From ${receipt.supplierName}`,
@@ -18,8 +18,8 @@ export const RecentActivity = ({ receipts, transfers }: RecentActivityProps) => 
       icon: ArrowDownToLine,
       iconColor: 'text-success'
     })),
-    ...transfers.slice(0, 3).map(transfer => ({
-      id: transfer.id,
+    ...transfers.slice(0, 3).map((transfer, index) => ({
+      id: `transfer-${transfer.id}`,
       type: 'transfer' as const,
       description: `Transferred ${transfer.quantity} ${transfer.productName}`,
       subtext: `To ${transfer.receiverName}`,

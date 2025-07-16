@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Package, 
@@ -49,6 +49,7 @@ const navigationItems = [
 export const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div 
@@ -110,10 +111,19 @@ export const Sidebar = () => {
 
       {/* Footer */}
       <div className="p-4 border-t border-sidebar-border">
-        <div className={cn(
-          "flex items-center gap-3",
-          collapsed && "justify-center"
-        )}>
+        <button 
+          className={cn(
+            "flex items-center gap-3 w-full text-left hover:bg-sidebar-accent rounded-lg p-2 transition-colors",
+            collapsed && "justify-center"
+          )}
+          onClick={() => {
+            if (confirm('Are you sure you want to sign out?')) {
+              localStorage.removeItem('isAuthenticated');
+              localStorage.removeItem('currentUser');
+              navigate('/login');
+            }
+          }}
+        >
           <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
             <span className="text-sm font-medium text-primary">A</span>
           </div>
@@ -123,7 +133,7 @@ export const Sidebar = () => {
               <p className="text-xs text-sidebar-foreground/60 truncate">admin@warehouse.com</p>
             </div>
           )}
-        </div>
+        </button>
       </div>
     </div>
   );

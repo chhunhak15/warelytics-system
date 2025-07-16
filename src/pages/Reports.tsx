@@ -12,7 +12,10 @@ export default function Reports() {
             Generate comprehensive reports and analyze warehouse performance
           </p>
         </div>
-        <Button className="gap-2">
+        <Button 
+          className="gap-2"
+          onClick={() => alert('Export Reports feature coming soon!')}
+        >
           <Download className="w-4 h-4" />
           Export Reports
         </Button>
@@ -20,7 +23,10 @@ export default function Reports() {
 
       {/* Report Categories */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Daily Reports feature coming soon!')}
+        >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
               <BarChart3 className="w-6 h-6 text-primary" />
@@ -30,9 +36,12 @@ export default function Reports() {
               <p className="text-sm text-muted-foreground">Stock movements & activities</p>
             </div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Weekly Reports feature coming soon!')}
+        >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
               <TrendingUp className="w-6 h-6 text-success" />
@@ -42,9 +51,12 @@ export default function Reports() {
               <p className="text-sm text-muted-foreground">Performance summaries</p>
             </div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Monthly Reports feature coming soon!')}
+        >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
               <Calendar className="w-6 h-6 text-warning" />
@@ -54,9 +66,12 @@ export default function Reports() {
               <p className="text-sm text-muted-foreground">Comprehensive analysis</p>
             </div>
           </div>
-        </div>
+        </button>
 
-        <div className="metric-card cursor-pointer hover:shadow-lg transition-shadow">
+        <button 
+          className="metric-card cursor-pointer hover:shadow-lg transition-shadow text-left"
+          onClick={() => alert('Yearly Reports feature coming soon!')}
+        >
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-accent/30 rounded-lg flex items-center justify-center">
               <BarChart3 className="w-6 h-6 text-accent-foreground" />
@@ -66,7 +81,7 @@ export default function Reports() {
               <p className="text-sm text-muted-foreground">Annual overview</p>
             </div>
           </div>
-        </div>
+        </button>
       </div>
 
       {/* Coming Soon Placeholder */}

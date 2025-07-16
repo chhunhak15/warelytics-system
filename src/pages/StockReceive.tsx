@@ -18,7 +18,10 @@ export default function StockReceive() {
             Record incoming stock from suppliers and update inventory
           </p>
         </div>
-        <Button className="gap-2">
+        <Button 
+          className="gap-2"
+          onClick={() => alert('New Receipt feature coming soon!')}
+        >
           <Plus className="w-4 h-4" />
           New Receipt
         </Button>
@@ -79,6 +82,7 @@ export default function StockReceive() {
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Quantity</th>
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Received By</th>
                 <th className="text-left py-3 px-6 font-medium text-muted-foreground">Notes</th>
+                <th className="text-right py-3 px-6 font-medium text-muted-foreground">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -107,6 +111,24 @@ export default function StockReceive() {
                   </td>
                   <td className="py-4 px-6 text-muted-foreground max-w-xs truncate">
                     {receipt.notes || 'No notes'}
+                  </td>
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-2 justify-end">
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => alert(`Viewing receipt #${receipt.id}`)}
+                      >
+                        View
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={() => alert(`Editing receipt #${receipt.id}`)}
+                      >
+                        Edit
+                      </Button>
+                    </div>
                   </td>
                 </tr>
               ))}

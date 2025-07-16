@@ -37,7 +37,10 @@ export default function Inventory() {
             Manage your product inventory and track stock levels
           </p>
         </div>
-        <Button className="gap-2">
+        <Button 
+          className="gap-2"
+          onClick={() => alert('Add Product feature coming soon!')}
+        >
           <Plus className="w-4 h-4" />
           Add Product
         </Button>
@@ -165,10 +168,18 @@ export default function Inventory() {
                     </td>
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-2 justify-end">
-                        <Button variant="ghost" size="sm">
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={() => alert(`Editing product: ${product.name}`)}
+                        >
                           <Edit className="w-4 h-4" />
                         </Button>
-                        <Button variant="ghost" size="sm">
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={() => alert(`Deleting product: ${product.name}`)}
+                        >
                           <Trash2 className="w-4 h-4" />
                         </Button>
                       </div>
